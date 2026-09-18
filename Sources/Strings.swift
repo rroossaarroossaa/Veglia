@@ -34,7 +34,11 @@ enum L {
         case agentsHint       // hint inside the agents submenu
         case terminals        // "While a terminal is open"
         case terminalName     // "Terminal" in the status line
+        case support          // "Support Veglia" — opens the Ko-fi page
     }
+
+    /// Donation page opened by the "Support" menu item.
+    static let supportURL = "https://ko-fi.com/rosabosa"
 
     /// Languages for the submenu: code and native name, in display order.
     static let names: [(code: String, native: String)] = [
@@ -96,6 +100,7 @@ enum L {
             .agentsHint: "Agents are detected automatically; untick any you don't want",
             .terminals: "While a terminal is open",
             .terminalName: "Terminal",
+            .support: "Support Veglia ♥",
         ],
         "ru": [
             .watchApps: "Следить за приложениями",
@@ -124,6 +129,7 @@ enum L {
             .agentsHint: "Агенты определяются сами; лишних можно снять галочкой",
             .terminals: "Пока открыт терминал",
             .terminalName: "Терминал",
+            .support: "Поддержать Veglia ♥",
         ],
         "it": [
             .watchApps: "Sorveglia app",
@@ -152,6 +158,7 @@ enum L {
             .agentsHint: "Gli agenti vengono rilevati da soli; togli la spunta a quelli che non vuoi",
             .terminals: "Finché un terminale è aperto",
             .terminalName: "Terminale",
+            .support: "Sostieni Veglia ♥",
         ],
         "es": [
             .watchApps: "Vigilar apps",
@@ -180,6 +187,7 @@ enum L {
             .agentsHint: "Los agentes se detectan solos; desmarca los que no quieras",
             .terminals: "Mientras haya un terminal abierto",
             .terminalName: "Terminal",
+            .support: "Apoyar Veglia ♥",
         ],
         "pt": [
             .watchApps: "Vigiar apps",
@@ -208,6 +216,7 @@ enum L {
             .agentsHint: "Os agentes são detectados sozinhos; desmarque os que não quiser",
             .terminals: "Enquanto um terminal estiver aberto",
             .terminalName: "Terminal",
+            .support: "Apoiar o Veglia ♥",
         ],
         "fr": [
             .watchApps: "Surveiller des apps",
@@ -236,6 +245,7 @@ enum L {
             .agentsHint: "Les agents sont détectés automatiquement ; décochez ceux que vous ne voulez pas",
             .terminals: "Tant qu'un terminal est ouvert",
             .terminalName: "Terminal",
+            .support: "Soutenir Veglia ♥",
         ],
         "de": [
             .watchApps: "Apps überwachen",
@@ -264,6 +274,7 @@ enum L {
             .agentsHint: "Agenten werden automatisch erkannt; unerwünschte abwählen",
             .terminals: "Solange ein Terminal offen ist",
             .terminalName: "Terminal",
+            .support: "Veglia unterstützen ♥",
         ],
         "nl": [
             .watchApps: "Apps bewaken",
@@ -292,6 +303,7 @@ enum L {
             .agentsHint: "Agents worden automatisch herkend; vink uit wat je niet wilt",
             .terminals: "Zolang een terminal open is",
             .terminalName: "Terminal",
+            .support: "Steun Veglia ♥",
         ],
         "pl": [
             .watchApps: "Pilnuj aplikacji",
@@ -320,6 +332,7 @@ enum L {
             .agentsHint: "Agenci są wykrywani automatycznie; odznacz niepotrzebnych",
             .terminals: "Dopóki otwarty jest terminal",
             .terminalName: "Terminal",
+            .support: "Wesprzyj Veglia ♥",
         ],
         "uk": [
             .watchApps: "Стежити за програмами",
@@ -348,6 +361,7 @@ enum L {
             .agentsHint: "Агенти визначаються самі; зайвих можна зняти",
             .terminals: "Поки відкритий термінал",
             .terminalName: "Термінал",
+            .support: "Підтримати Veglia ♥",
         ],
         "tr": [
             .watchApps: "Uygulamaları izle",
@@ -376,6 +390,7 @@ enum L {
             .agentsHint: "Ajanlar otomatik algılanır; istemediklerinizin işaretini kaldırın",
             .terminals: "Bir terminal açıkken",
             .terminalName: "Terminal",
+            .support: "Veglia'yı destekle ♥",
         ],
         "ar": [
             .watchApps: "مراقبة التطبيقات",
@@ -404,6 +419,7 @@ enum L {
             .agentsHint: "يتم اكتشاف الوكلاء تلقائيًا؛ ألغِ تحديد ما لا تريده",
             .terminals: "ما دامت الطرفية مفتوحة",
             .terminalName: "الطرفية",
+            .support: "ادعم Veglia ♥",
         ],
         "hi": [
             .watchApps: "ऐप्स पर नज़र रखें",
@@ -432,6 +448,7 @@ enum L {
             .agentsHint: "एजेंट अपने आप पहचाने जाते हैं; जो न चाहिए उन्हें अनचेक करें",
             .terminals: "जब तक टर्मिनल खुला है",
             .terminalName: "टर्मिनल",
+            .support: "Veglia का समर्थन करें ♥",
         ],
         "zh-Hans": [
             .watchApps: "看守应用",
@@ -460,6 +477,7 @@ enum L {
             .agentsHint: "代理会自动识别；不需要的可以取消勾选",
             .terminals: "只要终端打开着",
             .terminalName: "终端",
+            .support: "支持 Veglia ♥",
         ],
         "zh-Hant": [
             .watchApps: "看守應用程式",
@@ -488,6 +506,7 @@ enum L {
             .agentsHint: "代理會自動辨識；不需要的可以取消勾選",
             .terminals: "只要終端機開著",
             .terminalName: "終端機",
+            .support: "支持 Veglia ♥",
         ],
         "ja": [
             .watchApps: "アプリを見守る",
@@ -516,6 +535,7 @@ enum L {
             .agentsHint: "エージェントは自動で検出されます。不要なものはチェックを外してください",
             .terminals: "ターミナルが開いている間",
             .terminalName: "ターミナル",
+            .support: "Veglia を応援する ♥",
         ],
         "ko": [
             .watchApps: "앱 지켜보기",
@@ -544,6 +564,7 @@ enum L {
             .agentsHint: "에이전트는 자동으로 감지됩니다. 원하지 않는 것은 체크를 해제하세요",
             .terminals: "터미널이 열려 있는 동안",
             .terminalName: "터미널",
+            .support: "Veglia 후원하기 ♥",
         ],
         "id": [
             .watchApps: "Awasi aplikasi",
@@ -572,6 +593,7 @@ enum L {
             .agentsHint: "Agen terdeteksi otomatis; hapus centang yang tidak diinginkan",
             .terminals: "Selama terminal terbuka",
             .terminalName: "Terminal",
+            .support: "Dukung Veglia ♥",
         ],
         "vi": [
             .watchApps: "Theo dõi ứng dụng",
@@ -600,6 +622,7 @@ enum L {
             .agentsHint: "Tác nhân được tự động phát hiện; bỏ chọn những gì bạn không cần",
             .terminals: "Khi terminal đang mở",
             .terminalName: "Terminal",
+            .support: "Ủng hộ Veglia ♥",
         ],
         "th": [
             .watchApps: "เฝ้าดูแอป",
@@ -628,6 +651,7 @@ enum L {
             .agentsHint: "เอเจนต์จะถูกตรวจพบอัตโนมัติ เอาเครื่องหมายออกได้ถ้าไม่ต้องการ",
             .terminals: "ตราบใดที่เทอร์มินัลเปิดอยู่",
             .terminalName: "เทอร์มินัล",
+            .support: "สนับสนุน Veglia ♥",
         ],
     ]
 }

@@ -51,8 +51,8 @@ cat > "$APP/Contents/Info.plist" <<EOF
   <key>CFBundleName</key><string>Veglia</string>
   <key>CFBundleDisplayName</key><string>Veglia</string>
   <key>CFBundleIdentifier</key><string>com.rosathings.veglia</string>
-  <key>CFBundleVersion</key><string>3</string>
-  <key>CFBundleShortVersionString</key><string>0.3</string>
+  <key>CFBundleVersion</key><string>4</string>
+  <key>CFBundleShortVersionString</key><string>0.4</string>
   <key>CFBundleExecutable</key><string>Veglia</string>
   <key>CFBundleIconFile</key><string>Veglia</string>
   <key>CFBundlePackageType</key><string>APPL</string>

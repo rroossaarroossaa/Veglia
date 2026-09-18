@@ -74,6 +74,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private let loginItem = NSMenuItem(title: L.t(.launchAtLogin), action: #selector(toggleLogin), keyEquivalent: "")
     private let languageItem = NSMenuItem(title: L.t(.language), action: nil, keyEquivalent: "")
     private let languageMenu = NSMenu()
+    private let supportItem = NSMenuItem(title: L.t(.support), action: #selector(openSupport), keyEquivalent: "")
     private let quitItem = NSMenuItem(title: L.t(.quit), action: #selector(quit), keyEquivalent: "q")
 
     // IOKit assertions. 0 means not held.
@@ -153,6 +154,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         }
         menu.addItem(languageItem)
         menu.addItem(.separator())
+        supportItem.target = self
+        menu.addItem(supportItem)
         quitItem.target = self
         menu.addItem(quitItem)
         menu.delegate = self
@@ -378,6 +381,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         loginItem.title = L.t(.launchAtLogin)
         languageItem.title = L.t(.language)
         languageMenu.items.first?.title = L.t(.systemLanguage)
+        supportItem.title = L.t(.support)
         quitItem.title = L.t(.quit)
         updateIcon()
     }
@@ -496,6 +500,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         } catch {
             NSLog("Veglia: could not change launch at login: \(error)")
         }
+    }
+
+    @objc private func openSupport() {
+        if let url = URL(string: L.supportURL) { NSWorkspace.shared.open(url) }
     }
 
     @objc private func quit() { NSApp.terminate(nil) }
