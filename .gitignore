@@ -1,0 +1,5 @@
+build/
+.DS_Store
+*.zip
+# Local notes for Claude Code, not part of the public project
+CLAUDE.md

@@ -1,0 +1,75 @@
+<!doctype html>
+<!-- Veglia app icon. A tall thin candle standing in the frame like a terminal caret: a pale
+     wax bar and a small live flame whose light falls on dark glass. Rendered by headless
+     Chrome to a 1024 px PNG with a transparent background, then sliced into .icns by build.sh.
+     The rounded square follows the macOS squircle (radius ≈ 22.4 % of the side). -->
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:transparent;width:1024px;height:1024px;overflow:hidden}</style>
+</head><body>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="sq" d="M512 92 C 790 92 932 234 932 512 C 932 790 790 932 512 932 C 234 932 92 790 92 512 C 92 234 234 92 512 92 Z"/>
+    <clipPath id="c"><use href="#sq"/></clipPath>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#26232c"/>
+      <stop offset="1" stop-color="#171519"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffc466" stop-opacity="0.8"/>
+      <stop offset="0.35" stop-color="#ff9f3a" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#ff9f3a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wax" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d9cbb5"/>
+      <stop offset="0.35" stop-color="#f6ecd9"/>
+      <stop offset="1" stop-color="#bfae94"/>
+    </linearGradient>
+    <linearGradient id="waxTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffdca0" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ffdca0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd27a"/>
+      <stop offset="0.6" stop-color="#ff9a2e"/>
+      <stop offset="1" stop-color="#e4561c"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="0.5" stop-color="#fff" stop-opacity="0.03"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="blur18"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer>
+    </filter>
+  </defs>
+
+  <use href="#sq" fill="#000" opacity="0.4" filter="url(#blur18)" transform="translate(0,16)"/>
+  <g clip-path="url(#c)">
+    <rect width="1024" height="1024" fill="url(#bg)"/>
+    <!-- Flame light on the glass -->
+    <ellipse cx="512" cy="330" rx="340" ry="300" fill="url(#glow)"/>
+    <rect width="1024" height="1024" filter="url(#grain)"/>
+
+    <!-- Candle -->
+    <rect x="452" y="392" width="120" height="420" rx="14" fill="url(#wax)"/>
+    <!-- Warm rim on top where the wax is heated -->
+    <rect x="452" y="392" width="120" height="120" rx="14" fill="url(#waxTop)"/>
+    <ellipse cx="512" cy="394" rx="60" ry="14" fill="#f9f0de"/>
+    <!-- Wick -->
+    <path d="M512 392 C 514 370 508 356 512 338" fill="none" stroke="#3a2a1c" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Flame: glow, body, core -->
+    <ellipse cx="512" cy="300" rx="70" ry="96" fill="#ffb347" opacity="0.55" filter="url(#blur18)"/>
+    <path d="M512 214 C 552 270 566 306 566 334 C 566 372 542 396 512 396 C 482 396 458 372 458 334 C 458 306 472 270 512 214 Z" fill="url(#flame)"/>
+    <path d="M512 296 C 530 322 536 340 536 354 C 536 374 526 388 512 388 C 498 388 488 374 488 354 C 488 340 494 322 512 296 Z" fill="#fff4d6" opacity="0.95" filter="url(#blur6)"/>
+
+    <!-- Faint reflection at the bottom -->
+    <ellipse cx="512" cy="820" rx="150" ry="22" fill="#ff9f3a" opacity="0.12" filter="url(#blur18)"/>
+    <use href="#sq" fill="none" stroke="url(#rim)" stroke-width="6"/>
+  </g>
+</svg>
+</body></html>
