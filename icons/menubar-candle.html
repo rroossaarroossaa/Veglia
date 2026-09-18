@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- Menu bar icon: a candle. Template image: black shapes and transparency only; macOS tints
+     it for light and dark menu bars. 20×20 pt canvas, rendered at 2x by build.sh.
+     Two states via ?state=on|off in the URL:
+       on  — lit: filled flame over the wick and a filled body;
+       off — resting: the same silhouette as a single outline. -->
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:transparent;width:20px;height:20px;overflow:hidden}</style>
+</head><body>
+<svg id="s" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+  <!-- Lit -->
+  <g id="on">
+    <path d="M10 1.2 C 12.2 3.8 13 5.2 13 6.6 C 13 8.4 11.7 9.6 10 9.6 C 8.3 9.6 7 8.4 7 6.6 C 7 5.2 7.8 3.8 10 1.2 Z"/>
+    <rect x="9.35" y="9.4" width="1.3" height="1.6"/>
+    <rect x="6.6" y="10.8" width="6.8" height="8.2" rx="1.6"/>
+  </g>
+  <!-- Resting: same silhouette, outline only -->
+  <g id="off" fill="none" stroke="#000" stroke-width="1.3" stroke-linejoin="round">
+    <path d="M10 1.9 C 11.9 4.2 12.4 5.4 12.4 6.6 C 12.4 8.1 11.4 9 10 9 C 8.6 9 7.6 8.1 7.6 6.6 C 7.6 5.4 8.1 4.2 10 1.9 Z"/>
+    <path d="M10 9 L10 10.8" stroke-linecap="round"/>
+    <rect x="7.25" y="11.45" width="5.5" height="6.9" rx="1.2"/>
+  </g>
+</svg>
+<script>
+  const on = location.search.includes('off') ? false : true;
+  document.getElementById('on').style.display = on ? '' : 'none';
+  document.getElementById('off').style.display = on ? 'none' : '';
+</script>
+</body></html>
