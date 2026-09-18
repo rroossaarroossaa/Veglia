@@ -91,6 +91,6 @@ The script renders the icons, compiles `Sources/*.swift` with `swiftc`, assemble
 
 ## Support
 
-Veglia is free. If it saved your night, you can buy me a coffee: link coming soon.
+Veglia is free. If it saved your night, you can [buy me a coffee on Ko-fi](https://ko-fi.com/rosabosa).
 
 Made in Rome by [Rosa Things](https://github.com/rroossaarroossaa). MIT license.
