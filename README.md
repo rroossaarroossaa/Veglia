@@ -35,9 +35,21 @@ Veglia (Italian for *vigil*, a night kept awake by candlelight) watches for a ru
 
 ## Install
 
-1. Download `Veglia.zip` from the [latest release](../../releases/latest) and unzip it.
-2. Drag `Veglia.app` into your *Applications* folder and open it.
-3. **First launch only:** macOS will say the developer cannot be verified, because Veglia is not signed with a paid Apple certificate. Right-click the app, choose *Open*, then *Open* again. Or go to *System Settings → Privacy & Security* and press *Open Anyway*. This happens once.
+**From the terminal, one line:**
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/rroossaarroossaa/veglia/main/install.sh | sh
+```
+
+It downloads the latest release into */Applications*, clears the quarantine flag so macOS opens it without the "unidentified developer" dialog, and launches it. Run it again to upgrade.
+
+**With Homebrew:**
+
+```sh
+brew install --cask rroossaarroossaa/tap/veglia
+```
+
+**By hand:** download `Veglia.zip` from the [latest release](../../releases/latest), unzip, drag `Veglia.app` into *Applications*. On the first launch macOS will say the developer cannot be verified, because Veglia is not signed with a paid Apple certificate: right-click the app, choose *Open*, then *Open* again. This happens once.
 
 A candle appears in the menu bar. That is the whole interface.
 
